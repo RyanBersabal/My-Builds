@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroTool — Pokemon Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="landing" class="screen">
+    <div class="landing-box">
+      <h1><span class="icon">&#9654;</span> RetroTool</h1>
+      <p>Anonymous retrospectives with Pokémon identities</p>
+      <input id="board-title-input" type="text" placeholder="Enter board title..." maxlength="100" class="input-board-title">
+      <div id="category-editor" class="category-editor">
+        <label class="category-editor-label">Categories</label>
+        <div id="category-inputs" class="category-inputs">
+          <div class="category-input-row">
+            <input type="text" value="Continue" maxlength="40" class="input-category">
+            <button type="button" class="btn btn-remove-cat" title="Remove">&times;</button>
+          </div>
+          <div class="category-input-row">
+            <input type="text" value="Start" maxlength="40" class="input-category">
+            <button type="button" class="btn btn-remove-cat" title="Remove">&times;</button>
+          </div>
+          <div class="category-input-row">
+            <input type="text" value="Stop" maxlength="40" class="input-category">
+            <button type="button" class="btn btn-remove-cat" title="Remove">&times;</button>
+          </div>
+        </div>
+        <button id="btn-add-cat" type="button" class="btn btn-small">+ Add Category</button>
+      </div>
+      <button id="btn-create" class="btn btn-primary">Create New Board</button>
+    </div>
+  </div>
+
+  <div id="board-screen" class="screen hidden">
+    <header>
+      <h1 id="board-title"><span class="icon">&#9654;</span> RetroTool</h1>
+      <div class="header-info">
+        <span id="user-badge" class="badge"></span>
+        <button id="btn-share" class="btn btn-small"><span class="icon">&#8599;</span> Copy Link</button>
+        <button id="btn-export-copy" class="btn btn-small"><span class="icon">&#9112;</span> Copy Summary</button>
+        <button id="btn-export-download" class="btn btn-small"><span class="icon">&#8615;</span> Download Summary</button>
+      </div>
+    </header>
+    <div class="columns" id="columns-container">
+      <!-- Columns rendered dynamically by JS -->
+    </div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
